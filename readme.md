@@ -1,17 +1,19 @@
-# 🐞 Squad 06 - BugBusters
+# 🐞 Squad 06 – BugBusters
 
-Projeto desenvolvido pela Squad 06 com foco em qualidade de software, testes e boas práticas de desenvolvimento.
+Projeto desenvolvido com foco em **Qualidade de Software (QA)**, utilizando **testes automatizados de interface web (UI)** para validar funcionalidades da plataforma **The Movie Database**.
 
 ---
 
-## 📌 Sobre o Projeto
+## 📌 Objetivo
 
-O **BugBusters** é um projeto criado com o objetivo de aplicar conceitos de:
+Este projeto tem como objetivo aplicar conceitos de:
 
-* ✅ Testes de software
-* ✅ Boas práticas de desenvolvimento
-* ✅ Organização de código
-* ✅ Trabalho em equipe
+
+* ✅ Automação de testes de interface (UI)
+
+A funcionalidade atualmente validada é:
+
+🔎 **Busca de filmes na interface web do TMDB**
 
 ---
 
@@ -19,22 +21,22 @@ O **BugBusters** é um projeto criado com o objetivo de aplicar conceitos de:
 
 * Node.js
 * JavaScript
+* Cypress
 * npm
-* (adicione aqui outras tecnologias utilizadas, se houver)
 
 ---
 
-## 🚀 Como Rodar o Projeto em Outra Máquina
+## 🚀 Como Executar o Projeto em Outra Máquina
 
 ### 🔧 1. Pré-requisitos
 
-Antes de começar, você precisa ter instalado:
+Certifique-se de ter instalado:
 
-* **Git**
-* **Node.js (versão 14 ou superior)**
-* **npm** (já vem com o Node)
+* Git
+* Node.js (versão 14 ou superior)
+* npm
 
-Verifique se estão instalados:
+Verifique no terminal:
 
 ```bash
 node -v
@@ -46,89 +48,96 @@ git --version
 
 ### 📥 2. Clonar o Repositório
 
-No terminal, execute:
-
 ```bash
 git clone https://github.com/Eliveltonmoura/Squad_06_BugBusters.git
-```
-
-Entre na pasta do projeto:
-
-```bash
 cd Squad_06_BugBusters
 ```
 
 ---
 
-### 📦 3. Instalar Dependências
+### 📦 3. Instalar as Dependências
 
 ```bash
 npm install
 ```
 
-Esse comando irá instalar todas as dependências listadas no `package.json`.
-
 ---
 
-### ▶️ 4. Executar o Projeto
+### ▶️ 4. Executar os Testes
 
-Caso exista script start:
-
-```bash
-npm start
-```
-
-Ou, se estiver configurado para desenvolvimento:
+Se estiver usando Cypress:
 
 ```bash
-npm run dev
+npx cypress open
 ```
 
-Após iniciar, acesse no navegador:
-
-```
-http://localhost:3000
-```
-
-*(A porta pode variar dependendo da configuração do projeto.)*
-
----
-
-## 🧪 Executar Testes
-
-Se o projeto possuir testes automatizados:
+ou modo headless:
 
 ```bash
-npm test
+npx cypress run
 ```
 
 ---
 
-## 📂 Estrutura do Projeto (Exemplo)
+## 🧪 Cenários de Teste Implementados
+
+### ✅ CT-SEARCH-001 – Buscar filme existente
+
+* Acessar a página inicial
+* Inserir nome de filme válido
+* Validar exibição nos resultados
+
+### ❌ CT-SEARCH-002 – Buscar filme inexistente
+
+* Inserir termo inválido
+* Validar mensagem ou ausência de resultados
+
+### ⚠️ CT-SEARCH-003 – Campo de busca vazio
+
+* Submeter campo sem texto
+* Validar comportamento do sistema
+
+---
+
+## 📂 Estrutura do Projeto
 
 ```
 Squad_06_BugBusters/
 │
-├── src/              # Código fonte
-├── tests/            # Testes automatizados
-├── package.json      # Dependências e scripts
-└── README.md         # Documentação do projeto
+├── cypress/
+│   └── e2e/
+│       └── search.cy.js
+│
+├── package.json
+└── README.md
 ```
+
+---
+
+## 🎯 Tipo de Teste
+
+* Teste Funcional
+* Teste de Interface (UI)
+* Teste Automatizado
+
+---
+
+## 📊 Ambiente de Teste
+
+* Navegador: Chrome
+* Sistema Operacional: Windows
+* Ferramenta de Automação: Cypress
 
 ---
 
 ## 👥 Equipe
 
-Squad 06 - BugBusters
-
-* Integrante 1
-* Integrante 2
-* Integrante 3
-* Integrante 4
+**Squad 06 – BugBusters**
 
 ---
 
-## 📄 Licença
+## 📌 Status do Projeto
 
-Este projeto é para fins educacionais.
+🚧 Em evolução – novos cenários de teste serão adicionados.
 
+---
