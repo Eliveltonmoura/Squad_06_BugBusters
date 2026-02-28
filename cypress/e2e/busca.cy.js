@@ -7,10 +7,10 @@ describe('Busca no TMDB', () => {
     cy.get('#inner_search_v4').should('be.visible')
 
     // digitar termo e enviar
-    cy.get('#inner_search_v4').type('Inception{enter}')
+    cy.get('#inner_search_v4').type('Os Simpsons{enter}')
 
     // validar que resultado aparece
-    cy.contains('Inception').should('be.visible')
+    cy.contains('Os Simpsons').should('be.visible')
   })
 
 })
