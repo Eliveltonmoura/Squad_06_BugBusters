@@ -110,12 +110,24 @@ npx cypress run
 ```
 Squad_06_BugBusters/
 │
-├── cypress/
-│   └── e2e/
-│       └── search.cy.js
-│
+├── cypress.config.js
 ├── package.json
-└── README.md
+├── readme.md
+│
+└── cypress/
+    ├── e2e/
+    │   ├── ct-search-001.cy.js
+    │   ├── ct-search-002.cy.js
+    │   └── ct-search-003.cy.js
+    │
+    ├── fixtures/
+    │   └── example.json
+    │
+    ├── images/
+    │
+    └── support/
+        ├── commands.js
+        └── e2e.js
 ```
 
 ---
