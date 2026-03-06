@@ -9,11 +9,11 @@ const user = {
 }
 
 const discussoes = {
-  assunto: "Personagens da trama",
-  mensagem: "Quais serão os personagens que vão aparecer nessa temporada"
+  assunto: "Identidade e consciência",
+  mensagem: "Se cada nova versão do Mickey mantém as memórias da anterior, até que ponto ele continua sendo a mesma pessoa? Em algum momento ele deixa de ser o 'Mickey original' ou isso nem importa mais?"
 }
 
-const filmeEscolhido = 'Jovem Sherlock'
+const filmeEscolhido = 'Mickey 17'
 
 describe('Criar discussão de filme', () => {
 
