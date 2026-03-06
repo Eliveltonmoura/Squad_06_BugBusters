@@ -6,6 +6,7 @@ const seletor = {
 
 Cypress.Commands.add('create_discussion', ({assunto, mensagem})=> {
 
+  cy.wait(3000)
   cy.get(seletor.assunto)
     .should('be.visible')
     .type(assunto)
@@ -21,7 +22,7 @@ Cypress.Commands.add('create_discussion', ({assunto, mensagem})=> {
 })
 
 Cypress.Commands.add('assunto_empty_discussion', ({assunto, mensagem})=> {
-
+  cy.wait(3000)
   cy.get(seletor.assunto)
     .should('be.visible')
 
@@ -36,7 +37,7 @@ Cypress.Commands.add('assunto_empty_discussion', ({assunto, mensagem})=> {
 })
 
 Cypress.Commands.add('mensagem_empty_discussion', ({assunto, mensagem})=> {
-
+  cy.wait(3000)
   cy.get(seletor.assunto)
     .should('be.visible')
     .type(assunto)

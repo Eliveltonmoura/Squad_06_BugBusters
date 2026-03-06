@@ -4,8 +4,8 @@ import '../../pages/discussion-page'
 
 
 const user = {
-  email: 'João_th',
-  password: 'dfgh'
+  email: 'yuril1234',
+  password: '1230'
 }
 
 const discussoes = {
