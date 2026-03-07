@@ -51,14 +51,14 @@ describe('Criar discussão de filme', () => {
   
     cy.assunto_empty_discussion(discussoes)
 
-    cy.contains('Responder').should('be.visible')
+    cy.contains('Responder').should('not.be.visible')
   })
 
   it('deve exibir erro ao tentar criar discussão sem mensagem', () => {
   
     cy.mensagem_empty_discussion(discussoes)
 
-    cy.contains('Responder').should('be.visible')
+    cy.contains('Responder').should('not.be.visible')
   })
 
 
