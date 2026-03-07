@@ -1,1 +1,23 @@
-node_modules
+# Dependências
+node_modules/
+
+# Logs
+*.log
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Ambiente
+.env
+
+# Build
+dist/
+build/
+
+# Coverage
+coverage/
+
+# IDE
+.vscode/
+.idea/
