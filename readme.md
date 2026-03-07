@@ -1,8 +1,13 @@
 # 🐞 Squad 06 – BugBusters
 
+
+## 🎬 Demonstração em Ação
+
 ![Demonstração do Teste](cypress/images/busca.cy.js.jpg)
 
-Projeto desenvolvido com foco em **Qualidade de Software (QA)**, utilizando **testes automatizados de interface web (UI)** para validar funcionalidades da plataforma **The Movie Database**.
+![Teste em Execução](cypress/images/busca.cy.js.gif)
+
+Projeto desenvolvido com foco em **Qualidade de Software (QA)**, utilizando **testes automatizados de interface web (UI)** para validar funcionalidades da plataforma **The Movie Database (TMDB)**.
 
 ---
 
@@ -10,8 +15,10 @@ Projeto desenvolvido com foco em **Qualidade de Software (QA)**, utilizando **te
 
 Este projeto tem como objetivo aplicar conceitos de:
 
-
 * ✅ Automação de testes de interface (UI)
+* ✅ Page Object Model (POM)
+* ✅ Comandos customizados Cypress
+* ✅ Testes de validação positivos e negativos
 
 A funcionalidade atualmente validada é:
 
@@ -21,22 +28,47 @@ A funcionalidade atualmente validada é:
 
 ## 🛠️ Tecnologias Utilizadas
 
-* Node.js
-* JavaScript
-* Cypress
-* npm
+* **Node.js** - Ambiente de execução JavaScript
+* **JavaScript** - Linguagem de programação
+* **Cypress** - Framework de testes E2E
+* **npm** - Gerenciador de pacotes
 
 ---
 
-## 🚀 Como Executar o Projeto em Outra Máquina
+## 📂 Estrutura do Projeto
+
+```
+Squad_06_BugBusters/
+├── cypress/
+│   ├── e2e/
+│   │   └── searchMovies/
+│   │       ├── searchMovies.cy.js    # CT-SEARCH-001
+│   │       ├── searchMovies2.cy.js   # CT-SEARCH-002
+│   │       └── searchMovies3.cy.js   # CT-SEARCH-003
+│   ├── fixtures/
+│   │   └── example.json
+│   ├── images/
+│   ├── pages/
+│   │   └── searchMovies-page.js      # Page Object com comandos
+│   └── support/
+│       ├── commands.js
+│       └── e2e.js
+├── cypress.config.js
+├── package.json
+└── readme.md
+```
+
+---
+
+## 🚀 Como Executar o Projeto
 
 ### 🔧 1. Pré-requisitos
 
 Certifique-se de ter instalado:
 
-* Git
-* Node.js (versão 14 ou superior)
-* npm
+* **Git**
+* **Node.js** (versão 14 ou superior)
+* **npm**
 
 Verifique no terminal:
 
@@ -52,7 +84,7 @@ git --version
 
 ```bash
 git clone https://github.com/Eliveltonmoura/Squad_06_BugBusters.git
-cd Squad_06_BugBusters
+cd "Squad_06_BugBusters"
 ```
 
 ---
@@ -67,32 +99,113 @@ npm install
 
 ### ▶️ 4. Executar os Testes
 
-Se estiver usando Cypress:
+**Modo interativo (Cypress UI):**
 
 ```bash
 npx cypress open
 ```
 
-ou modo headless:
+**Modo headless (linha de comando):**
 
 ```bash
 npx cypress run
+```
+
+**Executar teste específico:**
+
+```bash
+npx cypress run --spec "cypress/e2e/searchMovies/searchMovies.cy.js"
 ```
 
 ---
 
 ## 🧪 Cenários de Teste Implementados
 
-### ✅ CT-SEARCH-001 – Buscar filme existente
+### ✅ CT-SEARCH-001 – Buscar filmes existentes
 
-* Acessar a página inicial
-* Inserir nome de filme válido
-* Validar exibição nos resultados
+**Arquivo:** `searchMovies.cy.js`
 
-### ❌ CT-SEARCH-002 – Buscar filme inexistente
+**Objetivo:** Validar busca de filmes válidos e existentes na base do TMDB
 
-* Inserir termo inválido
-* Validar mensagem ou ausência de resultados
+**Casos de teste:**
+* Busca por "Os Simpsons"
+* Busca por "O Poderoso Chefão"
+* Busca por "Matrix"
+
+**Validação:** Verifica se o nome do filme aparece nos resultados da busca
+
+---
+
+### ❌ CT-SEARCH-002 – Buscar filmes inexistentes
+
+**Arquivo:** `searchMovies2.cy.js`
+
+**Objetivo:** Validar comportamento ao buscar termos que não são filmes válidos
+
+**Casos de teste:**
+* Busca por "filme inexistente"
+* Busca por "qa automatizado berimbal metalizado"
+* Busca por "qa automatizado é legal"
+
+**Validação:** Verifica exibição da mensagem "Não foram encontrados filmes que correspondam aos seus critérios de busca."
+
+---
+
+### 🔍 CT-SEARCH-003 – Busca sem entrada de texto
+
+**Arquivo:** `searchMovies3.cy.js`
+
+**Objetivo:** Validar comportamento ao submeter busca sem digitar nada
+
+**Casos de teste:**
+* Submissão de busca vazia (apenas pressionar Enter)
+
+**Validação:** Verifica exibição da mensagem de busca sem resultados
+
+---
+
+## 🎯 Comandos Customizados
+
+Os comandos customizados estão definidos em `cypress/pages/searchMovies-page.js`:
+
+### `cy.searchMovie(movieName)`
+Busca um filme existente e valida se aparece nos resultados
+
+### `cy.searchMovieInexistent(movieName)`
+Busca um filme inexistente e valida mensagem de erro
+
+### `cy.searchMovieEmpty()`
+Submete busca vazia e valida mensagem apropriada
+
+---
+
+## ⚙️ Configurações do Cypress
+
+O arquivo `cypress.config.js` possui as seguintes configurações:
+
+* **Gravação de vídeo:** Habilitada
+* **Compressão de vídeo:** 32
+* **Modo E2E:** Configurado
+
+---
+
+## 👥 Equipe
+
+**Squad 06 - BugBusters**
+
+Bootcamp Atlântico Avanti - Quality Assurance
+
+---
+
+## 📝 Licença
+
+ISC
+
+---
+
+## 🔗 Repositório
+
+[GitHub - Quality Assurance Bootcamp Atlântico Avanti](https://github.com/weberfern/Quality-Assurance---Bootcamp-Atlantico-Avanti.git)
 
 ### ⚠️ CT-SEARCH-003 – Campo de busca vazio
 
@@ -106,12 +219,24 @@ npx cypress run
 ```
 Squad_06_BugBusters/
 │
-├── cypress/
-│   └── e2e/
-│       └── search.cy.js
-│
+├── cypress.config.js
 ├── package.json
-└── README.md
+├── readme.md
+│
+└── cypress/
+    ├── e2e/
+    │   ├── ct-search-001.cy.js
+    │   ├── ct-search-002.cy.js
+    │   └── ct-search-003.cy.js
+    │
+    ├── fixtures/
+    │   └── example.json
+    │
+    ├── images/
+    │
+    └── support/
+        ├── commands.js
+        └── e2e.js
 ```
 
 ---
